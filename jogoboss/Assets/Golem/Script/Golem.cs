@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
-using Vector2 = UnityEngine.Vector2;
 
 public class Golem : MonoBehaviour
 {
@@ -18,16 +16,14 @@ public class Golem : MonoBehaviour
         if (transform.position.x > player.position.x && isFlipped)
         {
             transform.localScale = flipped;
-            transform.Rotate(0f,180f,0f);
+            transform.Rotate(0f, 180f, 0f);
             isFlipped = false;
         }
         else if (transform.position.x < player.position.x && !isFlipped)
         {
             transform.localScale = flipped;
-            transform.Rotate(0f,180f,0f);
+            transform.Rotate(0f, 180f, 0f);
             isFlipped = true;
         }
     }
-    
-    
 }
