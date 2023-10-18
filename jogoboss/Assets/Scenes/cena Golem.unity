@@ -328,6 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 496814885}
   - component: {fileID: 496814884}
+  - component: {fileID: 496814886}
   m_Layer: 0
   m_Name: Square Red
   m_TagString: Player
@@ -402,6 +403,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &496814886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496814883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62a029ab6077b6d458014dc349cf7131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  deathEffect: {fileID: 496814883}
 --- !u!1 &1338641203
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +432,7 @@ GameObject:
   - component: {fileID: 1338641205}
   - component: {fileID: 1338641209}
   - component: {fileID: 1338641210}
+  - component: {fileID: 1338641211}
   m_Layer: 0
   m_Name: Golem
   m_TagString: Untagged
@@ -461,7 +477,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6, y: 4.49}
+    oldSize: {x: 5.89, y: 6}
     newSize: {x: 5.89, y: 6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -551,8 +567,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338641203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.98, y: -2.76, z: 0}
-  m_LocalScale: {x: -0.40892926, y: 0.43575546, z: 0.43575546}
+  m_LocalPosition: {x: 2.98, y: -2.7734, z: 0}
+  m_LocalScale: {x: -0.5128037, y: 0.5464441, z: 0.5464441}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -584,3 +600,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022633bdaea49174f948f19a9b708a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackDamage: 20
+  enragedAttackDamage: 40
+  attackOffset: {x: 0, y: 0, z: 0}
+  attackRange: 1
+  attackMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &1338641211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338641203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ade4a7879412e94db57986a6f56aca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 500
+  deathEffect: {fileID: 0}
+  isInvulnerable: 0
