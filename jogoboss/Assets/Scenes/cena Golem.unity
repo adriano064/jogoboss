@@ -328,7 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 496814885}
   - component: {fileID: 496814884}
-  - component: {fileID: 496814886}
+  - component: {fileID: 496814888}
   m_Layer: 0
   m_Name: Square Red
   m_TagString: Player
@@ -403,7 +403,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &496814886
+--- !u!114 &496814888
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  deathEffect: {fileID: 496814883}
+  deathEffect: {fileID: 0}
 --- !u!1 &1338641203
 GameObject:
   m_ObjectHideFlags: 0
