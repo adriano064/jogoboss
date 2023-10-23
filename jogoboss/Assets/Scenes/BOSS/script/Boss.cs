@@ -10,11 +10,16 @@ public class Boss : MonoBehaviour
     private float timer;
     public bool walkRight = true;
 
+    public int health;
+    private Animator anim;
+    
+
 
     // Start is called before the first frame update
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,7 +27,7 @@ public class Boss : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if(timer >= walkTime)
+        if (timer >= walkTime)
         {
             walkRight = !walkRight;
             timer = 0f;
@@ -38,6 +43,13 @@ public class Boss : MonoBehaviour
             transform.eulerAngles = new Vector2(0, 180);
             rig.velocity = Vector2.left * speed;
         }
-        
     }
+
+    public void Damage(int dmg)
+    {
+        health -= dmg;
+        anim.SetInteger("transition", 2);
+    }
+        
+    
 }
