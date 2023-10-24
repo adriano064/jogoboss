@@ -16,7 +16,7 @@ public class player : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rig;
     private bool isfiri, olhandoDireita;
-    private bool atackuno;
+    public bool atackuno;
 
     public float movimento;
 
@@ -45,14 +45,14 @@ public class player : MonoBehaviour
          movimento = Input.GetAxis("Horizontal");
         rig.velocity = new Vector2(movimento * vl, rig.velocity.y);
 
-        if (movimento > 0 && !isjump)
+        if (movimento > 0 && !isjump && !atackuno)
         { 
             anim.SetInteger("transition", 1);
             transform.eulerAngles = new Vector3(0, 0, 0);
             olhandoDireita = true;
         }
 
-        if (movimento < 0 && !isjump)
+        if (movimento < 0 && !isjump  && !atackuno)
         {
             anim.SetInteger("transition", 1);
             transform.eulerAngles = new Vector3(0, 180, 0);
@@ -124,12 +124,28 @@ public class player : MonoBehaviour
 
     void atack1()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        {
+            StartCoroutine("Fire1");
+        }
+    }
+    
+    IEnumerator Fire1()
+    {
+        
+        
+        if (Input.GetKeyDown(KeyCode.X)) 
         {
             atackuno = true;
             anim.SetInteger("transition", 3);
+            
+            yield return new WaitForSeconds(1f);
+            atackuno = false;
+            anim.SetInteger("transition", 0);
         }
+        
     }
+    
+    
 
     void atack2()
     {
