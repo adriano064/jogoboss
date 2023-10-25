@@ -737,7 +737,7 @@ MonoBehaviour:
   slider: {fileID: 601407869}
   camera: {fileID: 253660707}
   target: {fileID: 1338641208}
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0, y: 2, z: 0}
 --- !u!1 &1235540595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,7 +1001,7 @@ MonoBehaviour:
   attackDamage: 20
   enragedAttackDamage: 40
   attackOffset: {x: 0, y: 0, z: 0}
-  attackRange: 1
+  attackRange: 1.5
   attackMask:
     serializedVersion: 2
     m_Bits: 0
@@ -1017,11 +1017,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ade4a7879412e94db57986a6f56aca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 500
-  health: 500
+  maxHealth: 400
+  health: 400
   deathEffect: {fileID: 0}
   isInvulnerable: 0
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 601407870}
 --- !u!1 &1630523438
 GameObject:
   m_ObjectHideFlags: 0
