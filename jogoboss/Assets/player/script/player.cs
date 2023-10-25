@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
+    public int vida;
     public int vl;
     public int fp;
 
@@ -17,6 +18,9 @@ public class player : MonoBehaviour
     private Rigidbody2D rig;
     private bool isfiri, olhandoDireita;
     public bool atackuno;
+    public bool atackduo;
+    public bool atacktri;
+    public bool atackqua;
 
     public float movimento;
 
@@ -45,21 +49,21 @@ public class player : MonoBehaviour
          movimento = Input.GetAxis("Horizontal");
         rig.velocity = new Vector2(movimento * vl, rig.velocity.y);
 
-        if (movimento > 0 && !isjump && !atackuno)
+        if (movimento > 0 && !isjump && !atackuno && !atackduo && !atacktri)
         { 
             anim.SetInteger("transition", 1);
             transform.eulerAngles = new Vector3(0, 0, 0);
             olhandoDireita = true;
         }
 
-        if (movimento < 0 && !isjump  && !atackuno)
+        if (movimento < 0 && !isjump  && !atackuno && !atackduo && !atacktri)
         {
             anim.SetInteger("transition", 1);
             transform.eulerAngles = new Vector3(0, 180, 0);
             olhandoDireita = false;
         }
 
-        if (movimento == 0 && !isjump && !isfiri && !atackuno)
+        if (movimento == 0 && !isjump && !isfiri && !atackuno && !atackduo && !atacktri)
         {
             anim.SetInteger("transition", 0);
         }
@@ -145,21 +149,53 @@ public class player : MonoBehaviour
         
     }
     
-    
-
     void atack2()
     {
-        if (Input.GetKeyDown(KeyCode.C))
         {
-            anim.SetInteger("transition", 4);
+            StartCoroutine("Fire2");
         }
+    }
+    
+    IEnumerator Fire2()
+    {
+        if (Input.GetKeyDown(KeyCode.C)) 
+        {
+            atackduo = true;
+            anim.SetInteger("transition", 4);
+            
+            yield return new WaitForSeconds(1f);
+            atackduo = false;
+            anim.SetInteger("transition", 0);
+        }
+        
     }
 
     void atack3()
     {
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            anim.SetInteger("transition", 5);
-        }
+        StartCoroutine("Fire3");
     }
+    
+    IEnumerator Fire3()
+    {
+        if (Input.GetKeyDown(KeyCode.V)) 
+        {
+            atacktri = true;
+            anim.SetInteger("transition", 5);
+            
+            yield return new WaitForSeconds(1f);
+            atacktri = false;
+            anim.SetInteger("transition", 0);
+        }
+        
+    }
+
+   /* public void dano( int dmg)
+    {
+        vida -= dmg;
+
+        if (vida <= 0)
+        {
+            
+        }
+    }*/
 }
