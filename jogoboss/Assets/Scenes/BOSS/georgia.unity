@@ -2416,11 +2416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fca7eae27d0ffd4ab6d1186b40ed2df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  stoppingDistance: 3
-  alvo: {fileID: 1753949456}
-  walkRight: 0
-  health: 0
+  speedBoss: 3
 --- !u!1 &1713523213
 GameObject:
   m_ObjectHideFlags: 0
@@ -2648,8 +2644,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753949451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.35, y: 2.07, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.7, y: 4.76, z: 0}
+  m_LocalScale: {x: 1.6364, y: 1.6364, z: 1.6364}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
