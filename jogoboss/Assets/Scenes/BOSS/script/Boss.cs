@@ -5,9 +5,17 @@ using UnityEngine.UIElements;
 
 public class Boss : MonoBehaviour
 {
-    private Transform posPlayer;
+    
+   public Transform posPlayer;
 
     public float speedBoss;
+
+    public bool wasInverted = false;
+    
+
+    
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +34,25 @@ public class Boss : MonoBehaviour
         {
             transform.position =
                 Vector2.MoveTowards(transform.position, posPlayer.position, speedBoss * Time.deltaTime);
+        }
+    }
+
+    public void LookAtPlayer()
+    {
+        Vector3 inverted = transform.localScale;
+        inverted.z *= -1f;
+
+        if (transform.position.x > posPlayer.position.x && wasInverted)
+        {
+            transform.localScale = inverted;
+            transform.Rotate(0f, 180f, 0f);
+            wasInverted = false;
+        }
+        else if(transform.position.x < posPlayer.position.x && !wasInverted)
+        {
+            transform.localScale = inverted;
+            transform.Rotate(0f,180f,0f);
+            wasInverted = true;
         }
     }
 }
