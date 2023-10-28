@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-    public int vida;
+    public int vida = 10;
     public int vl;
     public int fp;
 
     public GameObject bola;
     public Transform firipoint;
+    public GameObject spadasimples;
 
 
     private bool isjump;
@@ -28,6 +29,7 @@ public class player : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rig = GetComponent<Rigidbody2D>();
+        gamerControler.instance.UpdateVidas(vida);
 
 
     }
@@ -141,7 +143,9 @@ public class player : MonoBehaviour
         {
             atackuno = true;
             anim.SetInteger("transition", 3);
-            
+            GameObject spadasimples = Instantiate(spadasimples, spadasimples.position, spadasimples.rotation);
+
+
             yield return new WaitForSeconds(1f);
             atackuno = false;
             anim.SetInteger("transition", 0);
@@ -189,13 +193,14 @@ public class player : MonoBehaviour
         
     }
 
-   /* public void dano( int dmg)
+   public void Damage ( int dmg)
     {
         vida -= dmg;
+        gamerControler.instance.UpdateVidas(vida);
 
         if (vida <= 0)
         {
-            
+            Destroy(gameObject);
         }
-    }*/
+    }
 }
