@@ -11,12 +11,19 @@ public class Teste : MonoBehaviour
     public bool walkRight = true;
 
 
-    public int health;
-    private Animator anim; 
+    public int attackDamage = 10;
+    private Animator anim;
+
+    private int currentHealth;
+    
+
+    public int health = 3;
+
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        
+       
     }
 
 
@@ -53,6 +60,28 @@ public class Teste : MonoBehaviour
             rig.velocity = Vector2.left * speed;
         }
     }
+
+   public void TakeDamage(int dmge)
+    {
+        health -= dmge;
+         if( transform.rotation.y == 0)
+         {
+             transform.position += new Vector3(-1, 0, 0);
+         }
+         if(transform.rotation.y == 180)
+         {
+             transform.position += new Vector3(1, 0, 0);
+         }
+        
+        
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
+
 
 
 
