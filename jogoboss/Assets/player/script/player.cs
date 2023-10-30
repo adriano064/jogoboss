@@ -11,7 +11,7 @@ public class player : MonoBehaviour
 
     public GameObject bola;
     public Transform firipoint;
-    public GameObject spadasimples;
+    public GameObject spadaSimples;
 
 
     private bool isjump;
@@ -143,7 +143,7 @@ public class player : MonoBehaviour
         {
             atackuno = true;
             anim.SetInteger("transition", 3);
-            GameObject spadasimples = Instantiate(spadasimples, spadasimples.position, spadasimples.rotation);
+            //GameObject spadaSimples = Instantiate(this.spadaSimples, this.spadaSimples.position, this.spadaSimples.rotation);
 
 
             yield return new WaitForSeconds(1f);

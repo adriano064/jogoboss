@@ -6,7 +6,7 @@ public class spadasimples : MonoBehaviour
 {
     public float tempodevida;
     public int demage;
-    public GameObject spadasimples;
+    public GameObject spadaSimples;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +25,6 @@ public class spadasimples : MonoBehaviour
     void Update()
     {
         tempodevida -= Time.deltaTime;
-        if (tempodevida <= 0) Destroy(gameObjecto);
+        if (tempodevida <= 0) Destroy(gameObject);
     }
 }
