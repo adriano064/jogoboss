@@ -7,6 +7,7 @@ public class bola : MonoBehaviour
 
     private Rigidbody2D rig;
     public float speed;
+    public int demager;
 
     public bool isRight;
 
@@ -29,6 +30,15 @@ public class bola : MonoBehaviour
           rig.velocity = Vector2.left * speed;
         }
           
-       
+    }
+
+
+    public void OnTriggerEnter2D(Collider2D ccollision)
+    {
+        if (ccollision.gameObject.tag == "inimigo") ///usar a tag do inimigo
+        {
+            ccollision.GetComponent<inimigo>().dano(demager);
+            Destroy(gameObject);
+        }
     }
 }
