@@ -16,6 +16,8 @@ public class BossHealth : MonoBehaviour
 
     [SerializeField] FloatingHealthBar healthBar;
 
+    public Animator anim;
+
 
     private void Start()
     {
@@ -42,17 +44,19 @@ public class BossHealth : MonoBehaviour
             GetComponent<Animator>().SetBool("IsEnraged", true);
         }
 
-        if (health <= 0)
+        if (health == 0)
         {
-            GetComponent<Animator>().SetBool("Death_golem", true);
-            Die();
+            EnemyDead();
         }
     }
 
-    void Die()
+    private void EnemyDead()
     {
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        health = 0;
+        anim.SetTrigger("Death_golem");
+        Destroy(transform.gameObject.GetComponent<BoxCollider2D>());
+        Destroy(transform.gameObject.GetComponent<Rigidbody2D>());
+        Destroy(this);
     }
 
 }
