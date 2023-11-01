@@ -601,6 +601,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golem
       objectReference: {fileID: 0}
+    - target: {fileID: 2058314534604352777, guid: 66a1446a3175f9f498e8c25416ca6cf9, type: 3}
+      propertyPath: Attack1_golem
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2058314534604352778, guid: 66a1446a3175f9f498e8c25416ca6cf9, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 496814885}
     - target: {fileID: 2058314534604352779, guid: 66a1446a3175f9f498e8c25416ca6cf9, type: 3}
       propertyPath: m_RootOrder
       value: 1
