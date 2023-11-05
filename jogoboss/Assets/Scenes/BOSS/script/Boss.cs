@@ -59,13 +59,7 @@ public class Boss : MonoBehaviour
             wasInverted = true;
         }
     }
-    private void OnCollisionEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            collision.gameObject.GetComponent<Teste>().TakeDamage(damage);
-        }
-    }
+   
 }
 
 
