@@ -13,7 +13,7 @@ public class Boss : MonoBehaviour
 
     public bool wasInverted = false;
 
-    public int damage = 1;
+ 
 
     
 

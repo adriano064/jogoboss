@@ -4,46 +4,51 @@ using UnityEngine;
 
 public class Boss_Health : MonoBehaviour
 {
-    public int healthBoss = 100;
+    public int health = 100;
 
-    public GameObject deathEffect;
+    
     public bool isInvulnerable = false;
+    private Animator anim;
+
+    public int damage = 10;
 
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
+       
 
     }
 
-    public void TakeDamage(int damage)
+    public void Damage(int dmg)
     {
-        if (isInvulnerable)
 
-            return;
+        health -= dmg;
+        anim.SetTrigger("hurt");
 
-        healthBoss -= damage;
-
-        if (healthBoss <= 50)
+        if (health <= 0)
         {
-            GetComponent<Animator>().SetBool("attack2", true);
-        }
-
-        if (healthBoss <= 0)
-        {
-            Die();
+            Destroy(gameObject);
         }
     }
 
 
-    void Die()
+   
+
+    private void OnCollisionEnter2D(Collision2D coll)
     {
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        if (coll.gameObject.tag == "Player")
+        {
+            Debug.Log("Bateu");
+            coll.gameObject.GetComponent<Teste>().Damage(damage);
+        }
     }
+
 }
+

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Teste : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class Teste : MonoBehaviour
     public float walkTime;
     private float timer;
     public bool walkRight = true;
+
+    
+    public int health;
+    
     
     
 
@@ -18,14 +23,15 @@ public class Teste : MonoBehaviour
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
-        
-       
+      
+
+
     }
 
 
     void Update()
     {
-
+  
 
     }
 
@@ -57,7 +63,29 @@ public class Teste : MonoBehaviour
         }
     }
 
-  
+    public void Damage(int dmg)
+    {
+        health -= dmg;
+        
+        if(transform.rotation.y == 0)
+        {
+            transform.position += new Vector3(-3, 0, 0);
+        }
+        if(transform.rotation.y == 180)
+        {
+            transform.position += new Vector3(3, 0, 0);
+        }
+        if( health <= 0)
+        {
+           
+            GameController1.instance.GameOver();
+            Debug.Log("Morreu");
+        }
+
+    }
+    
+    
+      
 
 
 

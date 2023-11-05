@@ -30,7 +30,7 @@ public class Boss_Walk : StateMachineBehaviour
     {
         boss.LookAtPlayer();
         
-        Vector2 target = new Vector2(posPlayer.position.x, rig.position.y);
+        Vector2 target = new Vector2(posPlayer.position.x, rig.position.x);
         Vector2 newPos = Vector2.MoveTowards(rig.position, target, speedBoss * Time.fixedDeltaTime);
         rig.MovePosition(newPos);
 
