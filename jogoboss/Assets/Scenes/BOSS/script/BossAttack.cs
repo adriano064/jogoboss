@@ -7,9 +7,8 @@ public class BossAttack : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public int attackDamage = 10;
-    public int enragedAttackTwoDmg = 25;
-    
+    public int attackDamage = 20;
+
 
     public Vector3 attackOffSet;
     public float attackRange = 1f;
@@ -40,25 +39,13 @@ public class BossAttack : MonoBehaviour
         Collider2D col = Physics2D.OverlapCircle(pos, attackRange, attackMask);
         if (col != null)
         {
-            col.GetComponent<Player_Health>().TakeDamage(attackDamage);
+            col.GetComponent<Teste>().Damage(attackDamage);
         }
 
 
     }
 
-    public void AttackTwoEnraged()
-    {
-        Vector3 pos = transform.position;
-        pos += transform.right * attackOffSet.x;
-        pos += transform.up * attackOffSet.y;
-
-        Collider2D col = Physics2D.OverlapCircle(pos, attackRange, attackMask);
-        if (col != null)
-        {
-            col.GetComponent<Player_Health>().TakeDamage(enragedAttackTwoDmg);
-        }
-
-    }
+   
 
     private void OnDrawGizmosSelected()
     {

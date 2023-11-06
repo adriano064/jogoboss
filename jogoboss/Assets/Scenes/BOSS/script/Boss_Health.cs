@@ -5,17 +5,22 @@ using UnityEngine;
 public class Boss_Health : MonoBehaviour
 {
     public int health = 100;
-
     
-    public bool isInvulnerable = false;
     private Animator anim;
 
-    public int damage = 10;
+    public int damage = 20;
+
+    [SerializeField]
+    private BarraVida barraVida;
+
+    
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        this.barraVida.HealthMax = this.health;
+        this.barraVida.Health = this.health;
 
     }
 
@@ -31,6 +36,14 @@ public class Boss_Health : MonoBehaviour
 
         health -= dmg;
         anim.SetTrigger("hurt");
+
+        this.barraVida.Health = this.health;
+
+        if (health <= 70)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(5.0f , 0.0f);
+            damage = 30;
+        }
 
         if (health <= 0)
         {
@@ -49,6 +62,8 @@ public class Boss_Health : MonoBehaviour
             coll.gameObject.GetComponent<Teste>().Damage(damage);
         }
     }
+    
+    
 
 }
 
