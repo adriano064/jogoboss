@@ -12,6 +12,8 @@ public class player : MonoBehaviour
     public GameObject bola;
     public Transform firipoint;
     public GameObject spadaSimples;
+    public GameObject raio;
+    public GameObject combolateral;
 
 
     private bool isjump;
@@ -130,6 +132,7 @@ public class player : MonoBehaviour
 
     void atack1()
     {
+        if (Input.GetKeyDown(KeyCode.X)) 
         {
             StartCoroutine("Fire1");
         }
@@ -137,24 +140,22 @@ public class player : MonoBehaviour
     
     IEnumerator Fire1()
     {
-        
-        
-        if (Input.GetKeyDown(KeyCode.X)) 
-        {
-            atackuno = true;
+        atackuno = true;
             anim.SetInteger("transition", 3);
-            //GameObject spadaSimples = Instantiate(this.spadaSimples, this.spadaSimples.position, this.spadaSimples.rotation);
+            yield return new WaitForSeconds(0.8f);
+            GameObject spadaSimples = Instantiate(this.spadaSimples, this.firipoint.position, Quaternion.identity);
 
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.2f);
             atackuno = false;
             anim.SetInteger("transition", 0);
-        }
-        
+            StopCoroutine(nameof(Fire1));
     }
+    
     
     void atack2()
     {
+        if (Input.GetKeyDown(KeyCode.C)) 
         {
             StartCoroutine("Fire2");
         }
@@ -162,35 +163,41 @@ public class player : MonoBehaviour
     
     IEnumerator Fire2()
     {
-        if (Input.GetKeyDown(KeyCode.C)) 
-        {
-            atackduo = true;
-            anim.SetInteger("transition", 4);
+        atackduo = true;
+            anim.SetInteger("transition", 5);
+            yield return new WaitForSeconds(0.6f);
+            GameObject raio = Instantiate(this.raio, this.firipoint.position, Quaternion.identity);
+
             
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
             atackduo = false;
             anim.SetInteger("transition", 0);
+            StopCoroutine(nameof(Fire2));
         }
-        
-    }
+
+
 
     void atack3()
-    {
-        StartCoroutine("Fire3");
+    {   if (Input.GetKeyDown(KeyCode.V)) 
+        {
+                StartCoroutine("Fire3");
+        }
     }
+    
     
     IEnumerator Fire3()
     {
-        if (Input.GetKeyDown(KeyCode.V)) 
-        {
+        
             atacktri = true;
-            anim.SetInteger("transition", 5);
+            anim.SetInteger("transition", 4);
+            yield return new WaitForSeconds(0.8f);
+            GameObject combolateral = Instantiate(this.combolateral, this.firipoint.position, Quaternion.identity);
+
             
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
             atacktri = false;
             anim.SetInteger("transition", 0);
-        }
-        
+            StopCoroutine(nameof(Fire3));
     }
 
    public void Damage ( int dmg)

@@ -526,7 +526,7 @@ GameObject:
   m_Layer: 0
   m_Name: firepoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -927,65 +927,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2797700610697064422
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2797700609328878002, guid: f7b577ab8d741334bbf9d1b548910217, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2797700609328878002, guid: f7b577ab8d741334bbf9d1b548910217, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 2797700609328878002, guid: f7b577ab8d741334bbf9d1b548910217, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 2797700609328878002, guid: f7b577ab8d741334bbf9d1b548910217, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2797700609328878002, guid: f7b577ab8d741334bbf9d1b548910217, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2797700609328878002, guid: f7b577ab8d741334bbf9d1b548910217, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2797700609328878002, guid: f7b577ab8d741334bbf9d1b548910217, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2797700609328878002, guid: f7b577ab8d741334bbf9d1b548910217, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2797700609328878002, guid: f7b577ab8d741334bbf9d1b548910217, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2797700609328878002, guid: f7b577ab8d741334bbf9d1b548910217, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2797700609328878002, guid: f7b577ab8d741334bbf9d1b548910217, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2797700609328878004, guid: f7b577ab8d741334bbf9d1b548910217, type: 3}
-      propertyPath: m_Name
-      value: spadassimples
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f7b577ab8d741334bbf9d1b548910217, type: 3}
 --- !u!1001 &9160167909236079554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1006,6 +949,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6107915556305973473, guid: 7c600ad1606d8a442810078dda8b12f5, type: 3}
     - target: {fileID: 9160167909984219020, guid: 24d60bc543e539349ab20dd00cdd9c04, type: 3}
+      propertyPath: raio
+      value: 
+      objectReference: {fileID: 6429122184111771063, guid: 39431cb7f7e7446459a23b9e11276e1a, type: 3}
+    - target: {fileID: 9160167909984219020, guid: 24d60bc543e539349ab20dd00cdd9c04, type: 3}
       propertyPath: vida
       value: 10
       objectReference: {fileID: 0}
@@ -1017,6 +964,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9160167909984219020, guid: 24d60bc543e539349ab20dd00cdd9c04, type: 3}
+      propertyPath: combolateral
+      value: 
+      objectReference: {fileID: 1950658721981085755, guid: 1a385d30ac221bd40a92c6e6e150faa2, type: 3}
+    - target: {fileID: 9160167909984219020, guid: 24d60bc543e539349ab20dd00cdd9c04, type: 3}
+      propertyPath: spadaSimples
+      value: 
+      objectReference: {fileID: 2797700609328878004, guid: f7b577ab8d741334bbf9d1b548910217, type: 3}
     - target: {fileID: 9160167909984219023, guid: 24d60bc543e539349ab20dd00cdd9c04, type: 3}
       propertyPath: m_RootOrder
       value: 2

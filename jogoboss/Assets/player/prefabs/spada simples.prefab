@@ -58,3 +58,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026dae99edcdb1846beae6aeaa1e613c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tempodevida: 0.1
+  demage: 0
+  spadaSimples: {fileID: 0}
