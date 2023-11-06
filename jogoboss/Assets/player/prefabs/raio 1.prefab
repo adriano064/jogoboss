@@ -125,5 +125,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tempodevida: 0.1
-  demage: 0
+  demage: 10
   raio: {fileID: 0}
