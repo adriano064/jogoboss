@@ -8,10 +8,15 @@ public class Golem : MonoBehaviour
 
     public bool isFlipped = false;
 
+    [SerializeField] public AudioSource walkSound;
+
+    [SerializeField] private AudioSource walkSoundEffect;
+
     public void LookAtPlayer()
     {
         Vector3 flipped = transform.localScale;
         flipped.z *= -1f;
+        walkSoundEffect.Play();
 
         if (transform.position.x > player.position.x && isFlipped)
         {

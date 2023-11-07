@@ -11,9 +11,6 @@ public class Golem_Weapon : MonoBehaviour
     public float attackRange = 1f;
     public LayerMask attackMask;
     
-    //audio
-    private AudioSource source;
-    public AudioClip Walk_golem, Attack2_golem, Attack1_golem;
 
     public void Attack()
     {

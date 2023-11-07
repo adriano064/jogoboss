@@ -18,7 +18,8 @@ public class BossHealth : MonoBehaviour
 
     public Animator anim;
 
-
+    [SerializeField] private AudioSource deathSoundEffect;
+    
     private void Start()
     {
         health = maxHealth;
@@ -52,6 +53,7 @@ public class BossHealth : MonoBehaviour
 
     private void EnemyDead()
     {
+        deathSoundEffect.Play();
         health = 0;
         anim.SetTrigger("Death_golem");
         Destroy(transform.gameObject.GetComponent<BoxCollider2D>());

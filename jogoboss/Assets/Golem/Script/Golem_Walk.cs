@@ -19,7 +19,7 @@ public class Golem_Walk : StateMachineBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rig = animator.GetComponent<Rigidbody2D>();
         golem = animator.GetComponent<Golem>();
-        walkSound = golem.walkSound();
+        walkSound = golem.walkSound;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
