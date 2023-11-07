@@ -1,4 +1,4 @@
-using System;
+ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +8,8 @@ public class player : MonoBehaviour
     public int vida = 10;
     public int vl;
     public int fp;
+    public AudioClip[] audios;
+    public AudioSource Source;
 
     public GameObject bola;
     public Transform firipoint;
@@ -32,6 +34,7 @@ public class player : MonoBehaviour
         anim = GetComponent<Animator>();
         rig = GetComponent<Rigidbody2D>();
         gamerControler.instance.UpdateVidas(vida);
+        Source = GetComponent<AudioSource>();
 
 
     }
@@ -53,10 +56,16 @@ public class player : MonoBehaviour
          movimento = Input.GetAxis("Horizontal");
         rig.velocity = new Vector2(movimento * vl, rig.velocity.y);
 
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+        {
+            Play(0);
+        }
+
         if (movimento > 0 && !isjump && !atackuno && !atackduo && !atacktri)
         { 
             anim.SetInteger("transition", 1);
             transform.eulerAngles = new Vector3(0, 0, 0);
+            
             olhandoDireita = true;
         }
 
@@ -70,6 +79,7 @@ public class player : MonoBehaviour
         if (movimento == 0 && !isjump && !isfiri && !atackuno && !atackduo && !atacktri)
         {
             anim.SetInteger("transition", 0);
+            Source.Stop();
         }
     }
     void Jump()
@@ -210,4 +220,13 @@ public class player : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+   void Play(int valor)
+   {
+       if (valor >= 0 && valor < audios.Length)
+       {
+           Source.clip = audios[valor];
+           Source.Play();
+       }
+   }
 }
