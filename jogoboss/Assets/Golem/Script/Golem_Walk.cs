@@ -10,6 +10,8 @@ public class Golem_Walk : StateMachineBehaviour
     Transform player;
     Rigidbody2D rig;
     Golem golem;
+
+    [SerializeField] private AudioSource walkSound;
     
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -17,6 +19,7 @@ public class Golem_Walk : StateMachineBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rig = animator.GetComponent<Rigidbody2D>();
         golem = animator.GetComponent<Golem>();
+        walkSound = golem.walkSound;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -28,6 +31,11 @@ public class Golem_Walk : StateMachineBehaviour
         Vector2 newPos = Vector2.MoveTowards(rig.position, target, speed * Time.fixedDeltaTime);
         rig.MovePosition(newPos);
 
+        if (!walkSound.isPlaying)
+        {
+            walkSound.Play();
+        }
+
         if (Vector2.Distance(player.position, rig.position) <= attackRange)
         {
             animator.SetTrigger("Attack");
@@ -38,6 +46,7 @@ public class Golem_Walk : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("Attack");
+        walkSound.Stop();
     }
 
     

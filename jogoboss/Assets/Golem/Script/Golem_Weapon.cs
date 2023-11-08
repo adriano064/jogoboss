@@ -11,9 +11,7 @@ public class Golem_Weapon : MonoBehaviour
     public float attackRange = 1f;
     public LayerMask attackMask;
     
-    //audio
-    private AudioSource source;
-    public AudioClip Walk_golem, Attack2_golem, Attack1_golem;
+    [SerializeField] private AudioSource EnragedAttackSoundEffect;
 
     public void Attack()
     {
@@ -33,6 +31,8 @@ public class Golem_Weapon : MonoBehaviour
         Vector3 pos = transform.position;
         pos += transform.right * attackOffset.x;
         pos += transform.up * attackOffset.y;
+        
+        EnragedAttackSoundEffect.Play();
 
         Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
         if (colInfo != null)
