@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class BossAttack : MonoBehaviour
@@ -13,20 +14,23 @@ public class BossAttack : MonoBehaviour
     public Vector3 attackOffSet;
     public float attackRange = 1f;
     public LayerMask attackMask;
-
     
+    
+
    
 
-    void Start()
+
+
+
+    void Awake()
     {
         
-
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+
 
     }
 
@@ -40,9 +44,8 @@ public class BossAttack : MonoBehaviour
         if (col != null)
         {
             col.GetComponent<Teste>().Damage(attackDamage);
+
         }
-
-
     }
 
    
@@ -52,10 +55,12 @@ public class BossAttack : MonoBehaviour
         Vector3 pos = transform.position;
         pos += transform.right * attackOffSet.x;
         pos += transform.up * attackOffSet.y;
-        
+
         Gizmos.DrawWireSphere(pos, attackRange);
-      
+
     }
 }
+
+
 
    
