@@ -39,14 +39,11 @@ public class Golem_Walk : StateMachineBehaviour
         if (Vector2.Distance(player.position, rig.position) <= attackRange)
         {
             animator.SetTrigger("Attack");
-            if (attackRange > 3)
-            {
-                animator.SetBool("Stage1", false);
-            }
-            if(attackRange < 3)
-            {
-                animator.SetBool("Stage1", true);
-            }
+            animator.SetBool("Stage1", true);
+        }
+        else
+        {
+            animator.SetBool("Stage1", false);
         }
     }
 
