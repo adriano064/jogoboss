@@ -8,6 +8,7 @@ public class bola : MonoBehaviour
     private Rigidbody2D rig;
     public float speed;
     public int demager;
+   
 
     public bool isRight;
 
@@ -39,6 +40,7 @@ public class bola : MonoBehaviour
         {
             ccollision.GetComponent<inimigo>().dano(demager);
             Destroy(gameObject);
+           
         }
     }
 }

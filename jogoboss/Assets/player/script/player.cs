@@ -56,7 +56,7 @@ public class player : MonoBehaviour
          movimento = Input.GetAxis("Horizontal");
         rig.velocity = new Vector2(movimento * vl, rig.velocity.y);
 
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+       if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
         {
             Play(0);
         }
@@ -67,6 +67,7 @@ public class player : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, 0);
             
             olhandoDireita = true;
+           
         }
 
         if (movimento < 0 && !isjump  && !atackuno && !atackduo && !atacktri)
@@ -74,6 +75,7 @@ public class player : MonoBehaviour
             anim.SetInteger("transition", 1);
             transform.eulerAngles = new Vector3(0, 180, 0);
             olhandoDireita = false;
+           
         }
 
         if (movimento == 0 && !isjump && !isfiri && !atackuno && !atackduo && !atacktri)
@@ -85,18 +87,27 @@ public class player : MonoBehaviour
     void Jump()
     {
 
+        
         if (Input.GetButtonDown("Jump"))
         {
-            if(!isjump)
+            
+
+
+            if (!isjump)
             {
+             
                 anim.SetInteger("transition", 2);
                 rig.AddForce(new Vector2(0, fp), ForceMode2D.Impulse);
                 isjump = true;
-            
+                Play(3);
+                
+
+
             }
-           
+          
         }
-        
+       
+
     }
 
     private void OnCollisionEnter2D(Collision2D coll)
@@ -112,6 +123,7 @@ public class player : MonoBehaviour
     void Magia()
     {
         {
+           
             StartCoroutine("Fire");
         }
     }
@@ -124,26 +136,31 @@ public class player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Z)) 
             {
                 isfiri = true;
+                Play(2);
                 anim.SetInteger("transition", 6);
                 GameObject clone = Instantiate(bola, firipoint.position, firipoint.rotation);
-
-           
+              
                 clone.GetComponent<bola>().isRight = olhandoDireita;
-            
-
-            
-
+        
                 yield return new WaitForSeconds(0.4f);
                 isfiri = false;
                 anim.SetInteger("transition", 0);
-            }
-        
+                Source.Stop();
+                StopCoroutine(nameof(Fire));
+
+
+
+
+
+        }
+
     }
 
     void atack1()
     {
         if (Input.GetKeyDown(KeyCode.X)) 
         {
+            Play(1);
             StartCoroutine("Fire1");
         }
     }
@@ -154,12 +171,14 @@ public class player : MonoBehaviour
             anim.SetInteger("transition", 3);
             yield return new WaitForSeconds(0.8f);
             GameObject spadaSimples = Instantiate(this.spadaSimples, this.firipoint.position, Quaternion.identity);
+          
 
 
-            yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.2f);
             atackuno = false;
             anim.SetInteger("transition", 0);
-            StopCoroutine(nameof(Fire1));
+        Source.Stop();
+        StopCoroutine(nameof(Fire1));
     }
     
     
@@ -167,6 +186,7 @@ public class player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C)) 
         {
+            Play(2);
             StartCoroutine("Fire2");
         }
     }
@@ -182,7 +202,8 @@ public class player : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             atackduo = false;
             anim.SetInteger("transition", 0);
-            StopCoroutine(nameof(Fire2));
+        Source.Stop();
+        StopCoroutine(nameof(Fire2));
         }
 
 
@@ -190,7 +211,8 @@ public class player : MonoBehaviour
     void atack3()
     {   if (Input.GetKeyDown(KeyCode.V)) 
         {
-                StartCoroutine("Fire3");
+           
+            StartCoroutine("Fire3");
         }
     }
     
@@ -199,14 +221,18 @@ public class player : MonoBehaviour
     {
         
             atacktri = true;
-            anim.SetInteger("transition", 4);
+        Play(1);
+        anim.SetInteger("transition", 4);
             yield return new WaitForSeconds(0.8f);
+            Play(1);
             GameObject combolateral = Instantiate(this.combolateral, this.firipoint.position, Quaternion.identity);
 
             
             yield return new WaitForSeconds(0.5f);
+          
             atacktri = false;
             anim.SetInteger("transition", 0);
+            Source.Stop();
             StopCoroutine(nameof(Fire3));
     }
 
