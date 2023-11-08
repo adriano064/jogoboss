@@ -5,7 +5,7 @@ using UnityEngine;
 public class spadasimples : MonoBehaviour
 {
     public float tempodevida;
-    public int demage;
+    public int demage = 10;
     public GameObject spadaSimples;
 
     // Start is called before the first frame update
@@ -16,9 +16,9 @@ public class spadasimples : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D ccollision)
     {
-        if (ccollision.gameObject.tag == "inimigo") ///usar a tag do inimigo
+        if (ccollision.gameObject.tag == "Golem") ///usar a tag do inimigo
         {
-            ccollision.GetComponent<inimigo>().dano(demage);
+            ccollision.GetComponent<BossHealth>().TakeDamage(demage);
         }
     }
     

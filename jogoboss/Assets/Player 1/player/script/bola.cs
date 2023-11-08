@@ -36,9 +36,9 @@ public class bola : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D ccollision)
     {
-        if (ccollision.gameObject.tag == "inimigo") ///usar a tag do inimigo
+        if (ccollision.gameObject.tag == "Golem") ///usar a tag do inimigo
         {
-            ccollision.GetComponent<inimigo>().dano(demager);
+            ccollision.GetComponent<BossHealth>().TakeDamage(demager); /// nome do script e do metodo
             Destroy(gameObject);
            
         }

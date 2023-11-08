@@ -6,9 +6,9 @@ using UnityEngine;
 public class BossHealth : MonoBehaviour
 {
 
-    [SerializeField] int maxHealth = 400;
+    [SerializeField] int maxHealth = 100;
     
-    public int health = 400;
+    public int health = 100;
 
     public GameObject deathEffect;
 
@@ -35,7 +35,7 @@ public class BossHealth : MonoBehaviour
 
     private void Update()
     {
-        if (health <= 200)
+        if (health <= 50)
         {
             GetComponent<Animator>().SetBool("IsEnraged", true);
             GetComponent<Animator>().SetBool("Stage1", false);
@@ -57,6 +57,7 @@ public class BossHealth : MonoBehaviour
         
         
     }
+
 
     private void EnemyDead()
     {

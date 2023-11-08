@@ -255,4 +255,9 @@ public class player : MonoBehaviour
            Source.Play();
        }
    }
+
+   public void TakeDamage(int attackDamage)
+   {
+       throw new NotImplementedException();
+   }
 }

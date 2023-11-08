@@ -20,9 +20,10 @@ public class Golem_Weapon : MonoBehaviour
         pos += transform.up * attackOffset.y;
 
         Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
-        if (colInfo != null)
+        Debug.Log(colInfo.gameObject.tag);
+        if (colInfo.gameObject.tag == "Player")
         {
-            colInfo.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+            colInfo.GetComponent<player>().TakeDamage(attackDamage);
         }
     }
 
