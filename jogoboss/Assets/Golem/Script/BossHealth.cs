@@ -19,6 +19,8 @@ public class BossHealth : MonoBehaviour
     public Animator anim;
 
     [SerializeField] private AudioSource deathSoundEffect;
+
+    public bool IsDead;
     
     private void Start()
     {
@@ -31,6 +33,19 @@ public class BossHealth : MonoBehaviour
         healthBar = GetComponentInChildren<FloatingHealthBar>();
     }
 
+    private void Update()
+    {
+        if (health <= 200)
+        {
+            GetComponent<Animator>().SetBool("IsEnraged", true);
+            GetComponent<Animator>().SetBool("Stage1", false);
+        }
+        if (IsDead == false)
+        {
+            EnemyDead();
+        }
+    }
+
     public void TakeDamage(int damage)
     {
 
@@ -39,26 +54,22 @@ public class BossHealth : MonoBehaviour
 
         health -= damage;
         healthBar.UpdateHealthBar(health, maxHealth);
-
-        if (health <= 200)
-        {
-            GetComponent<Animator>().SetBool("IsEnraged", true);
-        }
-
-        if (health == 0)
-        {
-            EnemyDead();
-        }
+        
+        
     }
 
     private void EnemyDead()
     {
-        deathSoundEffect.Play();
-        health = 0;
-        anim.SetTrigger("Death_golem");
-        Destroy(transform.gameObject.GetComponent<BoxCollider2D>());
-        Destroy(transform.gameObject.GetComponent<Rigidbody2D>());
-        Destroy(this);
+        if (health <=0)
+        {
+            IsDead = true;
+            deathSoundEffect.Play();
+            health = 0;
+            anim.SetTrigger("Death");
+            Destroy(transform.gameObject.GetComponent<BoxCollider2D>());
+            Destroy(transform.gameObject.GetComponent<Rigidbody2D>());
+            Destroy(this);
+        }
     }
 
 }
