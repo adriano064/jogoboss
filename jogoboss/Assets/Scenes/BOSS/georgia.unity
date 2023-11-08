@@ -2966,7 +2966,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 1811748386, guid: e4b4aaeeea02dfa4da6e5505d4ff10e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3085,7 +3085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab59427c6cdf20c4da3cd072ebbbd495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 500
   damage: 20
   barraVida: {fileID: 2012784778}
 --- !u!82 &1598852553
@@ -3098,11 +3098,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6b66e83279bdcef4cb6ff4be89fd2b62, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a89c7c6ea32ca6e43baa9bc8f950347c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.669
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3555,7 +3555,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.877803
+  orthographic size: 6.991757
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3579,9 +3579,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713523213}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.57, y: 1.17, z: -10}
+  m_LocalPosition: {x: 2.57, y: 1.12, z: -10}
   m_LocalScale: {x: 1.1710169, y: 1.1563792, z: 1.1710169}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -3598,7 +3598,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f062442775dce524b8c6906981e67a77, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.172
+  m_Volume: 0.293
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3805,7 +3805,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.6621043, g: 0, b: 0.98039216, a: 1}
   m_FlipX: 0
@@ -3825,7 +3825,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753949451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.99, y: -2.35, z: 0}
+  m_LocalPosition: {x: -1.46, y: 1.74, z: 0}
   m_LocalScale: {x: 1.6364, y: 1.6364, z: 1.6364}
   m_ConstrainProportionsScale: 0
   m_Children: []
