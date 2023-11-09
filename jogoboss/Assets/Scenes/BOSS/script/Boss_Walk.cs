@@ -41,6 +41,7 @@ public class Boss_Walk : StateMachineBehaviour
             animator.SetTrigger("Attack");
             audio.Play();
         }
+        
     }
 
 

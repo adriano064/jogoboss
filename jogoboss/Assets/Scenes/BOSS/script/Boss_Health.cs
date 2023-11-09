@@ -5,13 +5,17 @@ using UnityEngine;
 public class Boss_Health : MonoBehaviour
 {
     public int health = 100;
-    
+    private Rigidbody2D rig;
     private Animator anim;
 
     public int damage = 20;
 
     [SerializeField]
     private BarraVida barraVida;
+
+    private float s = 2;
+  
+    
 
     
 
@@ -27,10 +31,10 @@ public class Boss_Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-
+        s = GetComponent<Boss_Walk>().speedBoss;
     }
 
+    
     public void Damage(int dmg)
     {
 
@@ -41,7 +45,7 @@ public class Boss_Health : MonoBehaviour
 
         if (health <= 70)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(5.0f , 0.0f);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(10.0f * s, 0.0f);
             damage = 30;
         }
 
