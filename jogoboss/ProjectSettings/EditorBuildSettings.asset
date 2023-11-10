@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/AdrianoPlayer 1/Scenes/cena player.unity
+    guid: 87e6aa61776555947bdd3fa087c25a92
+  - enabled: 1
+    path: Assets/GeorgiaBoss/cena dois.unity
+    guid: e2e4d2a7ac40ed243a52970ec41b7e7c
   m_configObjects: {}

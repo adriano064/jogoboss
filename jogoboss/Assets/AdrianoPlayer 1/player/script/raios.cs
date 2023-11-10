@@ -17,9 +17,9 @@ public class raios : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D ccollision)
     {
-        if (ccollision.gameObject.tag == "inimigo") ///usar a tag do inimigo
+        if (ccollision.gameObject.tag == "Boss1") ///usar a tag do inimigo
         {
-            ccollision.GetComponent<inimigo>().dano(demage);
+            ccollision.GetComponent<Boss_Health>().Damage(demage);
         }
         if (ccollision.gameObject.tag == "Golem") ///usar a tag do inimigo
         {

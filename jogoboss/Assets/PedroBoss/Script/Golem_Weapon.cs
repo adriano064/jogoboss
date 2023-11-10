@@ -25,6 +25,7 @@ public class Golem_Weapon : MonoBehaviour
        //     colInfo.GetComponent<player>().TakeDamage(attackDamage);
        // }
     }
+    
 
     public void EnragedAttack()
     {

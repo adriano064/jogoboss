@@ -6,6 +6,11 @@ TagManager:
   tags:
   - inimigo
   - Golem
+  - Boss1
+  - bala
+  - combo
+  - raio
+  - simples
   layers:
   - Default
   - TransparentFX
