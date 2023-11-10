@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Golem_Weapon : MonoBehaviour
 {
-    public int attackDamage = 20;
-    public int enragedAttackDamage = 40;
+    public int attackDamage = 1;
+    public int enragedAttackDamage = 2;
 
     public Vector3 attackOffset;
     public float attackRange = 1f;
@@ -19,12 +19,11 @@ public class Golem_Weapon : MonoBehaviour
         pos += transform.right * attackOffset.x;
         pos += transform.up * attackOffset.y;
 
-        Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
-        Debug.Log(colInfo.gameObject.tag);
-        if (colInfo.gameObject.tag == "Player")
-        {
-            colInfo.GetComponent<player>().TakeDamage(attackDamage);
-        }
+        // Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
+       // if (colInfo.gameObject.tag == "Player")
+       // {
+       //     colInfo.GetComponent<player>().TakeDamage(attackDamage);
+       // }
     }
 
     public void EnragedAttack()
@@ -35,10 +34,17 @@ public class Golem_Weapon : MonoBehaviour
         
         EnragedAttackSoundEffect.Play();
 
-        Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
-        if (colInfo != null)
+        //Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
+        //if (colInfo != null)
+        //{
+        //    colInfo.GetComponent<PlayerHealth>().TakeDamage(enragedAttackDamage);
+        //}
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
         {
-            colInfo.GetComponent<PlayerHealth>().TakeDamage(enragedAttackDamage);
+            collision.gameObject.GetComponent<player>().Damage(attackDamage);
         }
     }
 
