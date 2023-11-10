@@ -8,7 +8,7 @@ public class Boss_Health : MonoBehaviour
     private Rigidbody2D rig;
     private Animator anim;
 
-    public int damage = 20;
+    public int damage = 5 ;
 
     [SerializeField]
     private BarraVida barraVida;
@@ -43,10 +43,10 @@ public class Boss_Health : MonoBehaviour
 
         this.barraVida.Health = this.health;
 
-        if (health <= 70)
+        if (health <= 40)
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(10.0f * s, 0.0f);
-            damage = 30;
+            damage = 7;
         }
 
         if (health <= 0)
@@ -63,7 +63,31 @@ public class Boss_Health : MonoBehaviour
         if (coll.gameObject.tag == "Player")
         {
             Debug.Log("Bateu");
-            coll.gameObject.GetComponent<Teste>().Damage(damage);
+            coll.gameObject.GetComponent<player>().Damage(damage);
+        }
+
+        if (coll.gameObject.tag == "combo")
+        {
+            Debug.Log("Bateu");
+            coll.gameObject.GetComponent<player>().Damage(damage);
+        }
+        
+        if (coll.gameObject.tag == "raio")
+        {
+            Debug.Log("Bateu");
+            coll.gameObject.GetComponent<player>().Damage(damage);
+        }
+        
+        if (coll.gameObject.tag == "simples")
+        {
+            Debug.Log("Bateu");
+            coll.gameObject.GetComponent<player>().Damage(damage);
+        }
+        
+        if (coll.gameObject.tag == "bala")
+        {
+            Debug.Log("Bateu");
+            coll.gameObject.GetComponent<player>().Damage(damage);
         }
     }
     

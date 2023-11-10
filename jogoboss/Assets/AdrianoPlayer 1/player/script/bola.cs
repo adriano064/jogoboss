@@ -40,7 +40,11 @@ public class bola : MonoBehaviour
         {
             ccollision.GetComponent<BossHealth>().TakeDamage(demager); /// nome do script e do metodo
             Destroy(gameObject);
-           
+        }
+        if (ccollision.gameObject.tag == "Boss1") ///usar a tag do inimigo
+        {
+            ccollision.GetComponent<Boss_Health>().Damage(demager);
+            Destroy(gameObject);
         }
     }
 }
