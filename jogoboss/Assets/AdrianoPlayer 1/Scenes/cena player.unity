@@ -1187,6 +1187,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9160167909984219020, guid: 24d60bc543e539349ab20dd00cdd9c04, type: 3}
+      propertyPath: atackuno
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9160167909984219020, guid: 24d60bc543e539349ab20dd00cdd9c04, type: 3}
+      propertyPath: liberagolpe
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9160167909984219020, guid: 24d60bc543e539349ab20dd00cdd9c04, type: 3}
+      propertyPath: liberagolpe2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9160167909984219020, guid: 24d60bc543e539349ab20dd00cdd9c04, type: 3}
+      propertyPath: liberagolpe3
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9160167909984219023, guid: 24d60bc543e539349ab20dd00cdd9c04, type: 3}
       propertyPath: m_RootOrder
       value: 1

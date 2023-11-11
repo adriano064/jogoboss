@@ -16,6 +16,10 @@ public class player : MonoBehaviour
     public GameObject spadaSimples;
     public GameObject raio;
     public GameObject combolateral;
+    public bool liberagolpe;
+    public bool liberagolpe1;
+    public bool liberagolpe2;
+    public bool liberagolpe3;
 
 
     private bool isjump;
@@ -133,7 +137,7 @@ public class player : MonoBehaviour
     {
         
         
-            if (Input.GetKeyDown(KeyCode.Z)) 
+            if (Input.GetKeyDown(KeyCode.Z) && liberagolpe) 
             {
                 isfiri = true;
                 Play(2);
@@ -158,7 +162,7 @@ public class player : MonoBehaviour
 
     void atack1()
     {
-        if (Input.GetKeyDown(KeyCode.X)) 
+        if (Input.GetKeyDown(KeyCode.X) && liberagolpe1) 
         {
             Play(1);
             StartCoroutine("Fire1");
@@ -184,7 +188,7 @@ public class player : MonoBehaviour
     
     void atack2()
     {
-        if (Input.GetKeyDown(KeyCode.C)) 
+        if (Input.GetKeyDown(KeyCode.C)&& liberagolpe2) 
         {
             Play(2);
             StartCoroutine("Fire2");
@@ -209,7 +213,7 @@ public class player : MonoBehaviour
 
 
     void atack3()
-    {   if (Input.GetKeyDown(KeyCode.V)) 
+    {   if (Input.GetKeyDown(KeyCode.V)&& liberagolpe3) 
         {
            
             StartCoroutine("Fire3");
